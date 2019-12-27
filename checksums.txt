@@ -1,0 +1,8 @@
+File:   Beginning-v1.00.pdf
+Size:   5640063
+SHA256: c3a47c212570aceb49c7b22a9eaf7eaedcca571d93caa315e5b931b428cf7551
+
+File:   Explained-v0.01.pdf
+Size:   71541
+SHA256: e996b2a2353367bb4542469daa3a67b516f292788c26228fda57d17d75b71668
+

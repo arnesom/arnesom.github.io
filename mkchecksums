@@ -1,0 +1,26 @@
+#! /usr/bin/env raku
+
+use Digest::MD5;
+use Digest::SHA256::Native;
+
+get-info($_) for dir.grep( *.ends-with('.pdf') ).sort;
+
+sub get-info ($file)
+{
+  say "File:   { $file.Str  }";
+  say "Size:   { $file.s }";
+  # say "MD5:    { get-digest($file, 'md5') }";
+  say "SHA256: { get-digest($file, 'sha256') }";
+  say "";
+}
+
+sub get-digest ($file, $digest)
+{
+  my $fh = open $file, :bin;
+  my Blob $blob = $fh.read(9999999);
+  $fh.close;
+
+  return sha256-hex($blob) if $digest eq 'sha256';
+  # my $d = Digest::MD5.new;
+  # return $d.md5_hex($blob) if $digest eq 'md5';  # Too slow!
+}
